@@ -19,7 +19,7 @@
 스크롤 연출·영상 전환이 핵심이라 정지 이미지로는 느낌이 잘 안 살아요. 실제 스크롤 경험은 로컬에서
 `npm install && npm run dev`로 확인하는 걸 추천합니다. (배포 링크는 추후 추가 예정)
 
-GitHub Repo: [github.com/seochaewon11/economy](https://github.com/seochaewon11/economy)
+실사이트: [economy-eight-flame.vercel.app](https://economy-eight-flame.vercel.app) · GitHub Repo: [github.com/seochaewon11/economy](https://github.com/seochaewon11/economy)
 
 ## ✨ 주요 기능 & 인터랙션
 
