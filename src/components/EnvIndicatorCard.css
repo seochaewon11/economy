@@ -1,0 +1,166 @@
+.env-card {
+  position: absolute;
+  left: 50%;
+  bottom: 6vh;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: fit-content;
+  max-width: 92vw;
+  padding: 18px 30px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.env-card-head {
+  flex: 0 0 auto;
+  padding-right: 28px;
+  border-right: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.env-card-title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+  white-space: nowrap;
+}
+
+.env-card-sub {
+  margin: 4px 0 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b6f6d;
+  white-space: nowrap;
+}
+
+.env-card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+}
+
+.env-card-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 28px;
+  border-right: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.env-card-list li:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+
+.env-card-icon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--after-200, #dcebdd);
+  color: var(--after-800, #1f6546);
+}
+
+.env-card-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.env-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.env-card-label {
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: #555a57;
+}
+
+.env-card-value {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.env-card-unit {
+  margin-left: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b6f6d;
+}
+
+.env-card-link {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--after-800, #1f6546);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .env-card {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    padding: 20px 18px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .env-card-head {
+    padding-right: 0;
+    padding-bottom: 14px;
+    border-right: none;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+  }
+
+  .env-card-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .env-card-list li {
+    padding-right: 0;
+    padding-bottom: 12px;
+    border-right: none;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  }
+
+  .env-card-list li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .env-card-link {
+    align-self: flex-start;
+  }
+}

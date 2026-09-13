@@ -1,0 +1,294 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 600vh;
+}
+
+.hero--static {
+  height: 100vh;
+}
+
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--before-950);
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: brightness(0.92) contrast(1.05) saturate(1.28);
+}
+
+.hero-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(110, 175, 235, 0.24) 0%,
+    rgba(120, 195, 220, 0.1) 40%,
+    rgba(90, 165, 195, 0.14) 100%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.hero-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--before-950);
+}
+
+.hero-loading-percent {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-loading-track {
+  width: 220px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.hero-loading-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--after-400);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.15s linear;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      100deg,
+      rgba(10, 12, 10, 0.65) 0%,
+      rgba(10, 12, 10, 0.28) 32%,
+      rgba(10, 12, 10, 0) 55%
+    ),
+    linear-gradient(
+      260deg,
+      rgba(10, 12, 10, 0.55) 0%,
+      rgba(10, 12, 10, 0) 22%
+    ),
+    linear-gradient(
+      to top,
+      rgba(6, 8, 6, 0.5) 0%,
+      rgba(6, 8, 6, 0) 24%
+    );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: absolute;
+  left: 11vw;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 640px;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  margin: 0 0 14px;
+  font-family: var(--font-body);
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-title {
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.22;
+}
+
+.hero-title-line1 {
+  font-family: var(--font-gmarket);
+  font-weight: 500;
+  font-size: clamp(30px, 4.6vw, 58px);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--white);
+}
+
+.hero-title-line2 {
+  font-family: var(--font-ink);
+  font-weight: normal;
+  font-size: clamp(42px, 6.4vw, 82px);
+  color: #1f9e4c;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  margin-top: -0.1em;
+}
+
+.hero-sub {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(14px, 1.2vw, 17px);
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: var(--after-200);
+}
+
+.hero-progress {
+  position: absolute;
+  right: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.hero-progress-rail {
+  position: relative;
+  width: 2px;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.hero-progress-rail-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transform: scaleY(0);
+  transform-origin: top;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.hero-progress ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 118px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.hero-progress li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  opacity: 0.35;
+  transition: opacity 0.5s ease, font-size 0.5s ease, font-weight 0.2s ease;
+}
+
+.hero-progress li.is-active {
+  opacity: 1;
+}
+
+.hero-progress .stage-num {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-progress li.is-active .stage-num {
+  color: var(--after-200);
+  font-weight: 700;
+}
+
+.hero-progress .stage-label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  transition: font-size 0.5s ease, font-weight 0.3s ease;
+}
+
+.hero-progress li.is-active .stage-label {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    left: 9vw;
+    max-width: 520px;
+  }
+
+  .hero-progress {
+    right: 4vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 500vh;
+  }
+
+  .hero-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 0 6vw 4vh;
+  }
+
+  .hero-content {
+    position: static;
+    max-width: none;
+  }
+
+  .hero-title-line1 {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+
+  .hero-title-line2 {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .hero-progress {
+    top: 8vh;
+    right: 5vw;
+    transform: none;
+  }
+
+  .hero-progress ol {
+    gap: 12px;
+  }
+
+  .hero-progress .stage-label {
+    font-size: 12px;
+  }
+
+  .hero-progress li.is-active .stage-label {
+    font-size: 15px;
+  }
+}
+

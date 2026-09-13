@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>한국환경공단 | 자연과 인간을 위한 건강하고 행복한 환경조성</title>
+<meta name="description" content="한국환경공단 웹사이트 리뉴얼 컨셉 - 환경복원, 데이터, 미래환경을 스크롤로 경험하는 인터랙티브 사이트" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="preload" as="image" href="assets/frames/frame_0001.webp" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ LOADING / INTRO SPLASH ============ -->
+<div id="loadingOverlay" class="loading-overlay" role="status" aria-live="polite">
+  <img class="loading-bg" src="assets/frames/frame_0001.webp" alt="" aria-hidden="true" onload="this.classList.add('is-loaded')" />
+  <div class="loading-scrim" aria-hidden="true"></div>
+
+  <div class="loading-topbar">
+    <span class="loading-logo">KECO</span>
+  </div>
+
+  <div class="loading-frame" id="loadingFrame">
+    <span class="frame-corner corner-tl" aria-hidden="true"></span>
+    <span class="frame-corner corner-tr" aria-hidden="true"></span>
+    <span class="frame-corner corner-bl" aria-hidden="true"></span>
+    <span class="frame-corner corner-br" aria-hidden="true"></span>
+
+    <div class="loading-frame-content">
+      <p class="loading-headline">
+        THINK<br />
+        <span class="accent">EARTH &amp; US</span>
+      </p>
+      <p class="loading-caption">한국환경공단 웹사이트 리뉴얼 컨셉</p>
+    </div>
+  </div>
+
+  <div class="loading-bottombar">
+    <span class="loading-brand">한국환경공단</span>
+    <span id="loadingPercent" class="loading-percent">LOADING 0%</span>
+  </div>
+
+  <div class="loading-bar-track">
+    <div id="loadingBarFill" class="loading-bar-fill"></div>
+  </div>
+</div>
+
+<!-- ============ GNB ============ -->
+<header class="gnb" id="gnb">
+  <div class="gnb-inner">
+    <a href="#top" class="gnb-logo">
+      <span class="gnb-logo-en">KECO</span>
+      <span class="gnb-logo-kr">한국환경공단</span>
+    </a>
+
+    <nav class="gnb-nav" id="gnbNav" aria-label="주요 메뉴">
+      <ul>
+        <li><a href="#intro">공단소개</a></li>
+        <li><a href="#projects">주요사업</a></li>
+        <li><a href="#data">환경정보</a></li>
+        <li><a href="#service">ESG경영</a></li>
+        <li><a href="#service">국민참여</a></li>
+        <li><a href="#footer">알림·소통</a></li>
+      </ul>
+    </nav>
+
+    <div class="gnb-right">
+      <button type="button" class="gnb-search-btn" id="gnbSearchBtn" aria-label="검색 열기" aria-expanded="false">검색</button>
+      <button type="button" class="gnb-lang-btn">EN</button>
+      <button type="button" class="gnb-menu-btn" id="gnbMenuBtn" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <form class="gnb-search-panel" id="gnbSearchPanel">
+    <input type="search" placeholder="검색어를 입력하세요" aria-label="검색어 입력" />
+  </form>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero" aria-label="환경복원 스크롤 인터랙션">
+    <div class="hero-stage">
+
+      <canvas id="heroCanvas" aria-label="환경복원을 통해 나대지가 생태공원으로 변화하는 과정을 보여주는 화면"></canvas>
+
+      <div class="hero-copy">
+        <p class="hero-copy-main">
+          자연과 인간을 위한<br />
+          건강하고 행복한<br />
+          환경조성
+        </p>
+        <p class="hero-copy-sub">
+          환경의 가치를 회복하고<br />
+          지속가능한 미래를 만들어갑니다.
+        </p>
+      </div>
+
+      <!-- 환경지표 카드 5종 스택 (스크롤 순차 등장) -->
+      <div class="hero-cards" id="heroCards" aria-label="주요 환경지표 데이터 스택">
+        <article class="hero-card hero-card-1" data-index="0">
+          <div class="hero-card-header">
+            <span class="hero-card-num">01</span>
+            <span class="hero-card-en">RESOURCE CIRCULATION</span>
+          </div>
+          <h3 class="hero-card-kr">자원순환</h3>
+          <p class="hero-card-desc">지속가능한 자원 이용 체계 구축</p>
+          <span class="hero-card-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+
+        <article class="hero-card hero-card-2" data-index="1">
+          <div class="hero-card-header">
+            <span class="hero-card-num">02</span>
+            <span class="hero-card-en">AIR ENVIRONMENT</span>
+          </div>
+          <h3 class="hero-card-kr">대기환경</h3>
+          <p class="hero-card-desc">깨끗한 공기를 위한 환경관리</p>
+          <span class="hero-card-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+
+        <article class="hero-card hero-card-3" data-index="2">
+          <div class="hero-card-header">
+            <span class="hero-card-num">03</span>
+            <span class="hero-card-en">WATER ENVIRONMENT</span>
+          </div>
+          <h3 class="hero-card-kr">물환경</h3>
+          <p class="hero-card-desc">건강한 물환경과 생태 보전</p>
+          <span class="hero-card-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+
+        <article class="hero-card hero-card-4" data-index="3">
+          <div class="hero-card-header">
+            <span class="hero-card-num">04</span>
+            <span class="hero-card-en">CLIMATE</span>
+          </div>
+          <h3 class="hero-card-kr">기후·탄소</h3>
+          <p class="hero-card-desc">탄소중립을 향한 환경전환</p>
+          <span class="hero-card-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+
+        <article class="hero-card hero-card-5" data-index="4">
+          <div class="hero-card-header">
+            <span class="hero-card-num">05</span>
+            <span class="hero-card-en">ECOLOGICAL RESTORATION</span>
+          </div>
+          <h3 class="hero-card-kr">환경복원</h3>
+          <p class="hero-card-desc">다시 살아나는 생태 공간</p>
+          <span class="hero-card-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+      </div>
+
+      <div class="env-counter" id="envCounter">
+        <div class="env-counter-slot is-active" data-slot="a">
+          <p class="env-counter-value">
+            <span class="env-counter-sign"></span><span class="env-counter-number">0</span><span class="env-counter-percent">%</span>
+          </p>
+          <p class="env-counter-label-en"></p>
+          <p class="env-counter-label-kr"></p>
+        </div>
+        <div class="env-counter-slot" data-slot="b" aria-hidden="true">
+          <p class="env-counter-value">
+            <span class="env-counter-sign"></span><span class="env-counter-number">0</span><span class="env-counter-percent">%</span>
+          </p>
+          <p class="env-counter-label-en"></p>
+          <p class="env-counter-label-kr"></p>
+        </div>
+      </div>
+
+      <div class="hero-progress-track" aria-hidden="true">
+        <div class="hero-progress-fill" id="heroProgressFill"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TREE SHOWCASE ============ -->
+  <section class="tree-showcase" id="treeShowcase" aria-label="나무가 회전하고 대지가 드러나는 스크롤 인터랙션">
+    <div class="tree-stage" id="treeStage">
+      <img class="tree-land-bg" id="treeLandBg" src="assets/land.jpg" alt="" aria-hidden="true" />
+      <div class="tree-scrim" id="treeScrim" aria-hidden="true"></div>
+
+      <div class="tree-visual">
+        <img class="tree-img" id="treeImg" src="assets/tree.jpg" alt="회복되는 나무" />
+      </div>
+
+      <div class="tree-copy">
+        <p class="section-eyebrow">GREEN RECOVERY</p>
+        <h2 class="section-title">회복되는 땅,<br />살아나는 숲</h2>
+      </div>
+
+      <div class="env-counter tree-counter" id="treeCounter">
+        <div class="env-counter-slot is-active" data-slot="a">
+          <p class="env-counter-value">
+            <span class="env-counter-sign"></span><span class="env-counter-number">0</span><span class="env-counter-percent">%</span>
+          </p>
+          <p class="env-counter-label-en"></p>
+          <p class="env-counter-label-kr"></p>
+        </div>
+        <div class="env-counter-slot" data-slot="b" aria-hidden="true">
+          <p class="env-counter-value">
+            <span class="env-counter-sign"></span><span class="env-counter-number">0</span><span class="env-counter-percent">%</span>
+          </p>
+          <p class="env-counter-label-en"></p>
+          <p class="env-counter-label-kr"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTRO ============ -->
+  <section class="intro reveal" id="intro">
+    <div class="section-inner">
+      <p class="intro-main">
+        환경을 바꾸는 일은<br />
+        삶의 공간을 바꾸는 일입니다.
+      </p>
+      <p class="intro-sub">
+        한국환경공단은 환경의 가치를 회복하고<br />
+        지속가능한 미래를 만들어갑니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ MAJOR PROJECTS ============ -->
+  <section class="projects" id="projects">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">MAJOR ENVIRONMENTAL PROJECTS</p>
+      <h2 class="section-title reveal">주요 환경사업</h2>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-thumb ph-01" aria-hidden="true"></div>
+          <span class="project-num">01</span>
+          <h3 class="project-title">자원순환</h3>
+          <p class="project-desc">폐기물을 자원으로 순환시키는 체계를 구축합니다.</p>
+          <span class="project-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-thumb ph-02" aria-hidden="true"></div>
+          <span class="project-num">02</span>
+          <h3 class="project-title">환경시설</h3>
+          <p class="project-desc">환경기초시설을 계획하고 운영을 지원합니다.</p>
+          <span class="project-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-thumb ph-03" aria-hidden="true"></div>
+          <span class="project-num">03</span>
+          <h3 class="project-title">기후·대기</h3>
+          <p class="project-desc">탄소중립과 대기질 개선을 위해 노력합니다.</p>
+          <span class="project-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-thumb ph-04" aria-hidden="true"></div>
+          <span class="project-num">04</span>
+          <h3 class="project-title">물환경</h3>
+          <p class="project-desc">건강한 물순환 체계를 만들어갑니다.</p>
+          <span class="project-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-thumb ph-05" aria-hidden="true"></div>
+          <span class="project-num">05</span>
+          <h3 class="project-title">환경안전</h3>
+          <p class="project-desc">화학물질과 환경 위해로부터 국민을 보호합니다.</p>
+          <span class="project-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-thumb ph-06" aria-hidden="true"></div>
+          <span class="project-num">06</span>
+          <h3 class="project-title">환경복원</h3>
+          <p class="project-desc">훼손된 공간을 다시 살아나게 합니다.</p>
+          <span class="project-arrow" aria-hidden="true">&#8594;</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENVIRONMENTAL DATA ============ -->
+  <section class="env-data" id="data">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">ENVIRONMENTAL DATA</p>
+      <h2 class="section-title reveal">환경을 숫자로 확인합니다.</h2>
+      <p class="env-data-note reveal">※ 아래 수치는 실제 통계가 아닌 컨셉 시안용 예시 데이터입니다.</p>
+
+      <div class="env-data-grid">
+        <article class="data-stat reveal">
+          <p class="data-stat-value">88.5<span class="data-stat-unit">%</span></p>
+          <p class="data-stat-label">자원 순환 재활용률 (시안 데이터)</p>
+        </article>
+        <article class="data-stat reveal">
+          <p class="data-stat-value">1,240<span class="data-stat-unit">개소</span></p>
+          <p class="data-stat-label">환경기초시설 통합 관리</p>
+        </article>
+        <article class="data-stat reveal">
+          <p class="data-stat-value">42.3<span class="data-stat-unit">%</span></p>
+          <p class="data-stat-label">탄소중립 목표 감축률</p>
+        </article>
+        <article class="data-stat reveal">
+          <p class="data-stat-value">15,800<span class="data-stat-unit">ha</span></p>
+          <p class="data-stat-label">누적 생태공간 복원 면적</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE ============ -->
+  <section class="service" id="service">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">SERVICE</p>
+      <h2 class="section-title reveal">자주 이용하는 서비스</h2>
+
+      <div class="service-grid">
+        <a class="service-card reveal" href="#">
+          <span>환경정보</span>
+          <span class="service-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+        <a class="service-card reveal" href="#">
+          <span>환경정책</span>
+          <span class="service-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+        <a class="service-card reveal" href="#">
+          <span>환경시설</span>
+          <span class="service-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+        <a class="service-card reveal" href="#">
+          <span>자원순환정보</span>
+          <span class="service-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+        <a class="service-card reveal" href="#">
+          <span>국민참여</span>
+          <span class="service-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+        <a class="service-card reveal" href="#">
+          <span>민원서비스</span>
+          <span class="service-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="footer">
+  <div class="section-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>공단소개</h4>
+        <ul>
+          <li><a href="#">인사말</a></li>
+          <li><a href="#">연혁</a></li>
+          <li><a href="#">조직도</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>주요사업</h4>
+        <ul>
+          <li><a href="#">자원순환</a></li>
+          <li><a href="#">환경시설</a></li>
+          <li><a href="#">기후·대기</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>환경정보</h4>
+        <ul>
+          <li><a href="#">환경통계</a></li>
+          <li><a href="#">환경데이터</a></li>
+          <li><a href="#">공개정보</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>국민참여</h4>
+        <ul>
+          <li><a href="#">참여마당</a></li>
+          <li><a href="#">공모전</a></li>
+          <li><a href="#">서포터즈</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>고객지원</h4>
+        <ul>
+          <li><a href="#">민원서비스</a></li>
+          <li><a href="#">자주묻는질문</a></li>
+          <li><a href="#">고객의소리</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-org">한국환경공단</p>
+      <p class="footer-contact">주소 : 공식 정보 확인 후 표기 예정&nbsp;&nbsp;|&nbsp;&nbsp;대표전화 : 공식 정보 확인 후 표기 예정</p>
+      <p class="footer-links">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+      </p>
+      <p class="footer-copy">본 페이지는 웹사이트 리뉴얼 컨셉 시안이며 실제 한국환경공단 공식 사이트가 아닙니다.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

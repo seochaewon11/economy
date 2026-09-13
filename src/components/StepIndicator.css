@@ -1,0 +1,47 @@
+.step-indicator {
+  position: absolute;
+  left: clamp(20px, 4vw, 56px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-indicator-num {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(23, 26, 24, 0.55);
+}
+
+.step-indicator--dark .step-indicator-num {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.step-indicator-dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-indicator-dots span {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(23, 26, 24, 0.35);
+}
+
+.step-indicator--dark .step-indicator-dots span {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 640px) {
+  .step-indicator {
+    left: 16px;
+  }
+}

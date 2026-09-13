@@ -1,0 +1,41 @@
+.promo-bar {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  margin-top: -10px;
+  padding: 0 6vw clamp(24px, 3vw, 40px);
+}
+
+.promo-bar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: clamp(14px, 1.6vw, 20px);
+  height: clamp(60px, 6vw, 72px);
+}
+
+.promo-bar-air {
+  flex: 1.7;
+  min-width: 0;
+}
+
+.promo-bar-social {
+  flex: 1;
+  min-width: 280px;
+}
+
+@media (max-width: 860px) {
+  .promo-bar {
+    margin-top: -6px;
+  }
+
+  .promo-bar-inner {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .promo-bar-social {
+    min-width: 0;
+  }
+}

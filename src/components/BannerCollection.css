@@ -1,0 +1,172 @@
+.banners {
+  position: relative;
+  width: 100%;
+  background: var(--paper-100, #f5f3ea);
+  padding: clamp(24px, 3.6vw, 44px) 0;
+}
+
+.banners-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(14px, 1.6vw, 20px) 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.8vw, 24px);
+  background: var(--white);
+  border-radius: clamp(16px, 1.8vw, 24px);
+  box-shadow: 0 16px 40px rgba(23, 26, 24, 0.08);
+}
+
+.banners-label {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding-left: clamp(16px, 2vw, 28px);
+  padding-right: clamp(14px, 1.8vw, 22px);
+  border-right: 1px solid rgba(23, 26, 24, 0.12);
+  align-self: stretch;
+}
+
+.banners-label span {
+  font-family: var(--font-gmarket);
+  font-weight: 700;
+  font-size: clamp(13px, 1.2vw, 16px);
+  letter-spacing: -0.01em;
+  color: var(--before-950, #171a18);
+  white-space: nowrap;
+}
+
+.banners-track-wrap {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+}
+
+.banners-track-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.banners-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.banners-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 clamp(8px, 1vw, 14px);
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.banners-item:hover {
+  transform: translateY(-3px);
+  opacity: 0.92;
+}
+
+.banners-thumb {
+  position: relative;
+  width: clamp(52px, 4.6vw, 72px);
+  height: clamp(52px, 4.6vw, 72px);
+  border-radius: clamp(12px, 1.2vw, 16px);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 6px 14px rgba(23, 26, 24, 0.12);
+}
+
+.banners-icon {
+  position: absolute;
+  left: -6px;
+  bottom: -6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(18px, 1.6vw, 22px);
+  height: clamp(18px, 1.6vw, 22px);
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(8px, 0.7vw, 9px);
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.banners-item-label {
+  max-width: clamp(64px, 5.6vw, 84px);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: clamp(10px, 0.85vw, 11.5px);
+  line-height: 1.35;
+  text-align: center;
+  color: var(--before-600, #5a5b50);
+  white-space: normal;
+}
+
+.banners-controls {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: clamp(12px, 1.8vw, 22px);
+  border-left: 1px solid rgba(23, 26, 24, 0.16);
+}
+
+.banners-control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(26px, 2.2vw, 32px);
+  height: clamp(26px, 2.2vw, 32px);
+  border-radius: 50%;
+  border: 1px solid rgba(23, 26, 24, 0.25);
+  background: none;
+  color: var(--after-800, #1f6546);
+  font-size: clamp(12px, 1vw, 13px);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.banners-control-btn:nth-child(2) {
+  font-size: clamp(9px, 0.8vw, 10px);
+}
+
+.banners-control-btn:hover {
+  border-color: var(--after-800, #1f6546);
+  background: var(--after-200, #dcebdd);
+}
+
+@media (max-width: 640px) {
+  .banners-inner {
+    border-radius: 20px;
+  }
+
+  .banners-label span {
+    display: none;
+  }
+
+  .banners-label {
+    padding-left: 16px;
+    padding-right: 14px;
+  }
+}

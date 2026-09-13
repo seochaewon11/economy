@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "InkLiquid";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GMarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")
+    format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GMarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GMarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  /* BEFORE (매립지) 팔레트 */
+  --before-950: #171a18;
+  --before-800: #343934;
+  --before-600: #5a5b50;
+  --before-400: #8a806d;
+  --before-200: #b29d7c;
+
+  /* AFTER (생태공원) 팔레트 */
+  --after-950: #123b2a;
+  --after-800: #1f6546;
+  --after-600: #4f8f62;
+  --after-400: #8fb59a;
+  --after-200: #dcebdd;
+
+  --white: #ffffff;
+
+  /* SECTION 02 (환경지표로 보는 변화) 팔레트 */
+  --paper-100: #f5f3ea;
+
+  --font-body: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+  --font-gmarket: "GMarketSans", "Pretendard", sans-serif;
+  --font-ink: "InkLiquid", "Pretendard", cursive;
+  --font-serif: "Noto Serif KR", "KoPub Batang", serif;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--before-950);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  width: 100%;
+}
+
+/* ---------- Site-wide ambient background ---------- */
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--paper-100, #f5f3ea);
+}
+
+.site-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+.site-bg-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 243, 234, 0.6) 0%,
+    rgba(245, 243, 234, 0.42) 50%,
+    rgba(245, 243, 234, 0.6) 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-bg-video {
+    display: none;
+  }
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
