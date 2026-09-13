@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import StepIndicator from "./StepIndicator.jsx";
 import "./WasteToResourceSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -66,8 +65,6 @@ export default function WasteToResourceSection() {
       ref={sectionRef}
       aria-label="자원순환: 폐기물이 다시 자원이 되는 과정"
     >
-      <StepIndicator step="02" dark={false} />
-
       <div className="w2r-inner">
         <div className="w2r-head" ref={headRef}>
           <div className="w2r-head-left">

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import StepIndicator from "./StepIndicator.jsx";
 import "./OnePlanetSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -63,7 +62,6 @@ export default function OnePlanetSection() {
       ref={awlSectionRef}
       aria-label="대기, 물, 토양은 연결되어 있습니다"
     >
-      <StepIndicator step="01" />
       <div className="awl-grid">
         {AWL.map((item, i) => (
           <div
