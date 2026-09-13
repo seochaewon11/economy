@@ -16,8 +16,9 @@
 |---|
 | ![환경지표로 보는 변화](./public/images/after.jpg) |
 
-스크롤 연출·영상 전환이 핵심이라 정지 이미지로는 느낌이 잘 안 살아요. 실제 스크롤 경험은 로컬에서
-`npm install && npm run dev`로 확인하는 걸 추천합니다. (배포 링크는 추후 추가 예정)
+스크롤 연출·영상 전환이 핵심이라 정지 이미지로는 느낌이 잘 안 살아요. 실제 스크롤 경험은
+[economy-eight-flame.vercel.app](https://economy-eight-flame.vercel.app)에서 직접 확인하는 걸 추천합니다.
+(로컬에서 보려면 `npm install && npm run dev`)
 
 실사이트: [economy-eight-flame.vercel.app](https://economy-eight-flame.vercel.app) · GitHub Repo: [github.com/seochaewon11/economy](https://github.com/seochaewon11/economy)
 
