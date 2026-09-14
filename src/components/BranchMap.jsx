@@ -183,6 +183,10 @@ export default function BranchMap() {
                 </g>
               ))}
             </svg>
+
+            <p className="branch-map-source">
+              DATA SOURCE · 한국환경공단 공식 안내자료 · Map: @svg-maps/south-korea (CC BY 4.0)
+            </p>
           </div>
 
           <div className="branch-map-panel">
@@ -209,10 +213,6 @@ export default function BranchMap() {
             </ul>
           </div>
         </div>
-
-        <p className="branch-map-source">
-          DATA SOURCE · 한국환경공단 공식 안내자료 · Map: @svg-maps/south-korea (CC BY 4.0)
-        </p>
       </div>
     </section>
   );
