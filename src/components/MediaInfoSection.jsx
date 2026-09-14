@@ -9,18 +9,10 @@ const NEWSLETTER = {
   desc: "한국환경공단의 다양한 소식과 환경 정보를 한눈에 담았습니다.",
 };
 
+// 사용자가 실제 제공한 한국환경공단 공지 배너 이미지 (텍스트가 이미 이미지 안에 포함되어 있음).
 const NOTICES = [
   {
-    image: "/images/water.jpeg",
-    text: "미세먼지, 오늘도 확인하셨나요?",
-  },
-  {
-    image: "/images/land.jpeg",
-    text: "탄소중립 실천, 작은 습관부터",
-  },
-  {
-    image: "/images/air.jpeg",
-    text: "우리 동네 환경지표 확인하기",
+    image: "/images/blog.JPG",
   },
 ];
 
@@ -89,34 +81,33 @@ export default function MediaInfoSection() {
           <div className="media-col">
             <div className="media-col-head">
               <h3>알림판</h3>
-              <div className="media-col-controls">
-                <span className="media-col-count">
-                  {noticeIndex + 1}/{NOTICES.length}
-                </span>
-                <button
-                  type="button"
-                  aria-label="이전 알림"
-                  onClick={() => setNoticeIndex((i) => (i - 1 + NOTICES.length) % NOTICES.length)}
-                >
-                  ‹
-                </button>
-                <button
-                  type="button"
-                  aria-label="다음 알림"
-                  onClick={() => setNoticeIndex((i) => (i + 1) % NOTICES.length)}
-                >
-                  ›
-                </button>
-              </div>
+              {NOTICES.length > 1 && (
+                <div className="media-col-controls">
+                  <span className="media-col-count">
+                    {noticeIndex + 1}/{NOTICES.length}
+                  </span>
+                  <button
+                    type="button"
+                    aria-label="이전 알림"
+                    onClick={() => setNoticeIndex((i) => (i - 1 + NOTICES.length) % NOTICES.length)}
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="다음 알림"
+                    onClick={() => setNoticeIndex((i) => (i + 1) % NOTICES.length)}
+                  >
+                    ›
+                  </button>
+                </div>
+              )}
             </div>
             <a
               className="media-banner"
               href="#"
               style={{ backgroundImage: `url(${notice.image})` }}
-            >
-              <span className="media-banner-scrim" aria-hidden="true" />
-              <span className="media-banner-text">{notice.text}</span>
-            </a>
+            />
           </div>
 
           <div className="media-col">

@@ -162,33 +162,13 @@
 .media-banner {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 12;
+  aspect-ratio: 846 / 342;
   border-radius: 14px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   box-shadow: 0 12px 28px rgba(23, 26, 24, 0.12);
   text-decoration: none;
-}
-
-.media-banner-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(6, 8, 6, 0.15) 0%, rgba(6, 8, 6, 0.6) 100%);
-}
-
-.media-banner-text {
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  z-index: 1;
-  font-family: var(--font-gmarket);
-  font-weight: 700;
-  font-size: clamp(16px, 1.5vw, 19px);
-  line-height: 1.4;
-  color: var(--white);
-  word-break: keep-all;
 }
 
 /* ---------- K-eco TV ---------- */
