@@ -14,6 +14,9 @@ const NOTICES = [
   {
     image: "/images/blog.JPG",
   },
+  {
+    image: "/images/notice-water-week-2026.png",
+  },
 ];
 
 const VIDEOS = [
@@ -39,10 +42,8 @@ function thumbUrl(id) {
 }
 
 export default function MediaInfoSection() {
-  const [noticeIndex, setNoticeIndex] = useState(0);
   const [videoStart, setVideoStart] = useState(0);
 
-  const notice = NOTICES[noticeIndex];
   const visibleVideos = [VIDEOS[videoStart % 3], VIDEOS[(videoStart + 1) % 3]];
 
   return (
@@ -81,33 +82,17 @@ export default function MediaInfoSection() {
           <div className="media-col">
             <div className="media-col-head">
               <h3>알림판</h3>
-              {NOTICES.length > 1 && (
-                <div className="media-col-controls">
-                  <span className="media-col-count">
-                    {noticeIndex + 1}/{NOTICES.length}
-                  </span>
-                  <button
-                    type="button"
-                    aria-label="이전 알림"
-                    onClick={() => setNoticeIndex((i) => (i - 1 + NOTICES.length) % NOTICES.length)}
-                  >
-                    ‹
-                  </button>
-                  <button
-                    type="button"
-                    aria-label="다음 알림"
-                    onClick={() => setNoticeIndex((i) => (i + 1) % NOTICES.length)}
-                  >
-                    ›
-                  </button>
-                </div>
-              )}
             </div>
-            <a
-              className="media-banner"
-              href="#"
-              style={{ backgroundImage: `url(${notice.image})` }}
-            />
+            <div className="media-banner-list">
+              {NOTICES.map((notice, i) => (
+                <a
+                  key={i}
+                  className="media-banner"
+                  href="#"
+                  style={{ backgroundImage: `url(${notice.image})` }}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="media-col">
