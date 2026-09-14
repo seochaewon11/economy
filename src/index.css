@@ -64,7 +64,6 @@
 
 html {
   background: var(--before-950);
-  overflow-x: hidden;
 }
 
 body {
