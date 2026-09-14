@@ -28,11 +28,11 @@
 영상처럼 부드럽게 재생되는 스크러빙 인터랙션을 구현했습니다. 좌측 고정 내비게이션(01 매립지 ~ 05
 생태공원)의 활성 단계와 진행 바(rail fill)도 같은 진행률로 동기화됩니다.
 
-### 2. AIR / WATER / LAND — 한 화면에 담은 3분할 시네마틱 트립틱
-"카드 여러 개"가 아니라, 대기·물·토양을 한 화면 안에서 동시에 보여주는 3분할 풀스크린 구성으로
-설계했습니다. 각 컬럼은 독립된 배경 이미지 위에 얇은 타이포그래피와 짧은 영문 태그라인을 올리고,
-`IntersectionObserver` 기반의 가벼운 `ScrollTrigger` fade-in만 적용해 과도한 연출 없이 화면에
-진입할 때 자연스럽게 드러나도록 했습니다.
+### 2. 환경지표로 보는 변화, 드래그형 Before/After 슬라이더
+`EnvironmentalChange` 섹션은 매립지 조성 → 복원 사업 → 생태공원 완성으로 이어지는 변화를 한 화면
+안에서 드래그로 직접 비교할 수 있는 Before/After 슬라이더로 구현했습니다. 슬라이더 핸들을 움직이면
+pointer 이벤트로 두 이미지의 노출 비율을 실시간 계산하고, 하단에는 세 단계 타임라인이 끊김 없는
+marquee로 반복 흐르며 진행 맥락을 보여줍니다.
 
 ### 3. WASTE → RESOURCE, 이미지 마스크 타이포그래피
 "폐기물이 자원이 되는" 핵심 메시지를 카드나 표가 아니라, 화면 너비를 가득 채우는 대형 타이포그래피로
@@ -48,23 +48,25 @@
 ## 🧭 사용자 플로우
 ```mermaid
 flowchart LR
-    A["Hero: 매립지 → 생태공원 (192프레임 스크러빙)"] --> B["환경지표로 보는 변화 (Before/After 슬라이더)"]
-    B --> C["환경을 지키는 다섯 가지 시선 (카드 그리드)"]
-    C --> D["AIR / WATER / LAND (3분할 트립틱)"]
+    A["Hero: 매립지 → 생태공원 (192프레임 캔버스 스크러빙)"] --> B["실시간 대기정보 · SNS 프로모 바"]
+    B --> C["환경지표로 보는 변화 (Before/After 슬라이더)"]
+    C --> D["환경을 지키는 다섯 가지 시선 (카드 그리드)"]
     D --> E["WASTE → RESOURCE (이미지 마스크 타이포)"]
-    E --> F["전국 지사 지도 (실제 한국 지도)"]
-    F --> G["환경 콘텐츠 배너 (무한 마퀴)"]
-    G --> H["Footer"]
+    E --> F["다양한 채널로 만나는 환경 정보 (소식지 · 알림판 · K-eco TV)"]
+    F --> G["전국 지사 지도 (실제 한국 지도)"]
+    G --> H["환경 콘텐츠 배너 (무한 마퀴)"]
+    H --> I["Footer"]
 ```
 
 ## 🗂️ 폴더 구조
 ```
 ├── src/
 │   ├── App.jsx              # 전체 섹션 조립 순서
-│   ├── components/          # 섹션별 컴포넌트 (Hero, PressReleaseSection, EcoTvSection, WasteToResourceSection, BranchMap 등)
+│   ├── components/          # 섹션별 컴포넌트 (Hero, EnvironmentalChange, EnvironmentalFields, WasteToResourceSection, MediaInfoSection, BranchMap 등)
 │   ├── lib/
 │   │   ├── scrollStage.js   # 여러 pin+scrub 섹션이 공유하는 스크롤 진행도 계산 헬퍼
-│   │   └── koreaMapPaths.js # 실제 대한민국 17개 시·도 SVG path 데이터
+│   │   ├── koreaMapPaths.js # 실제 대한민국 17개 시·도 SVG path 데이터
+│   │   └── airkorea.js      # 에어코리아 실시간 대기질 API 연동 헬퍼
 │   └── index.css            # 전역 스타일 · 디자인 토큰(CSS 변수)
 ├── public/
 │   ├── frames/               # Hero 캔버스 스크러빙용 192장 정지 프레임
