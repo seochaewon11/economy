@@ -61,7 +61,7 @@ flowchart LR
 ```
 ├── src/
 │   ├── App.jsx              # 전체 섹션 조립 순서
-│   ├── components/          # 섹션별 컴포넌트 (Hero, OnePlanetSection, WasteToResourceSection, BranchMap 등)
+│   ├── components/          # 섹션별 컴포넌트 (Hero, PressReleaseSection, EcoTvSection, WasteToResourceSection, BranchMap 등)
 │   ├── lib/
 │   │   ├── scrollStage.js   # 여러 pin+scrub 섹션이 공유하는 스크롤 진행도 계산 헬퍼
 │   │   └── koreaMapPaths.js # 실제 대한민국 17개 시·도 SVG path 데이터
