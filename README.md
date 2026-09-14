@@ -84,6 +84,7 @@ Claude Code와 함께 여러 라운드에 걸쳐 작업했습니다. 처음엔 �
 |---|---|---|
 | AIR/WATER/LAND 섹션이 모바일에서 인트로 화면만 보이고 나머지가 전혀 보이지 않음 | 가로 핀 스크롤(pin+scrub) 애니메이션을 모바일에서는 성능상 비활성화했는데, 비활성화 시의 세로 대체 레이아웃이 없어서 나머지 패널이 화면 밖에 묻힘 | 가로 핀 스크롤 방식 자체를 걷어내고, 3개 컬럼을 처음부터 정적으로 배치한 뒤 가벼운 fade-in만 추가하는 방식으로 재설계 |
 | WASTE/RESOURCE 이미지 마스크 타이포그래피가 `background-clip: text` 미지원 브라우저에서 텍스트가 아예 안 보임 | `color: transparent` + `background-clip: text` 조합은 미지원 브라우저에서 글자가 투명한 채로 남음 | `@supports not (background-clip: text)` 폴백으로 흰색 텍스트를 강제 지정 |
+| `WASTE → RESOURCE`, `MEDIA & INFO` 섹션에서 전역 배경 영상이 비치지 않고 항상 단색(노란빛)으로만 보임 | 두 섹션이 다른 섹션(`env-change`, `env-fields`, `branch-map`)과 달리 불투명한 `paper-100` 배경색을 그대로 사용해, `position: fixed`로 화면 뒤에 깔린 전역 배경 영상을 완전히 가림 | 두 섹션의 배경을 `transparent`로 변경해 다른 섹션과 동일하게 전역 배경 영상이 비쳐 보이도록 수정 |
 
 ## 📄 라이선스
 MIT (지도 데이터는 `@svg-maps/south-korea`, CC BY 4.0 별도 표기)
