@@ -280,7 +280,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-33.3333%);
+    transform: translateX(-12.5%);
   }
 }
 

@@ -7,8 +7,9 @@ const TIMELINE = [
   { key: "park", label: "생태공원 완성" },
 ];
 
-// 끊김 없는 marquee를 위해 동일 시퀀스를 3벌 이어붙인다.
-const TIMELINE_LOOP = [...TIMELINE, ...TIMELINE, ...TIMELINE];
+// 끊김 없는 marquee를 위해 동일 시퀀스를 8벌 이어붙인다.
+// (초광폭 데스크탑 화면에서도 콘텐츠가 끊기거나 빈 여백이 보이지 않도록 충분히 반복)
+const TIMELINE_LOOP = Array.from({ length: 8 }, () => TIMELINE).flat();
 
 export default function EnvironmentalChange() {
   const [pos, setPos] = useState(50);
