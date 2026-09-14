@@ -3,8 +3,7 @@ import Hero from "./components/Hero.jsx";
 import EnvironmentalChange from "./components/EnvironmentalChange.jsx";
 import PromoBar from "./components/PromoBar.jsx";
 import EnvironmentalFields from "./components/EnvironmentalFields.jsx";
-import PressReleaseSection from "./components/PressReleaseSection.jsx";
-import EcoTvSection from "./components/EcoTvSection.jsx";
+import MediaInfoSection from "./components/MediaInfoSection.jsx";
 import WasteToResourceSection from "./components/WasteToResourceSection.jsx";
 import BranchMap from "./components/BranchMap.jsx";
 import BannerCollection from "./components/BannerCollection.jsx";
@@ -32,8 +31,7 @@ export default function App() {
         <EnvironmentalChange />
         <EnvironmentalFields />
         <WasteToResourceSection />
-        <PressReleaseSection />
-        <EcoTvSection />
+        <MediaInfoSection />
         <BranchMap />
         <BannerCollection />
       </main>
