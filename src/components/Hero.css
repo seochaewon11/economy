@@ -154,7 +154,7 @@
 
 .hero-progress {
   position: absolute;
-  right: 5vw;
+  right: max(24px, 5%);
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
@@ -245,7 +245,7 @@
   }
 
   .hero-progress {
-    right: 4vw;
+    right: max(20px, 4%);
   }
 }
 
@@ -280,7 +280,7 @@
 
   .hero-progress {
     top: 8vh;
-    right: 5vw;
+    right: max(16px, 5%);
     transform: none;
   }
 

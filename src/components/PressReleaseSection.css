@@ -12,13 +12,20 @@
   padding: 0 6vw;
 }
 
+.news-mag-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+
 .news-headline {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-bottom: 16px;
-  margin-bottom: clamp(24px, 3vw, 36px);
+  padding-bottom: 14px;
+  margin-bottom: clamp(18px, 2.4vw, 26px);
   border-bottom: 2px solid var(--before-950, #171a18);
 }
 
@@ -26,7 +33,7 @@
   margin: 0;
   font-family: var(--font-gmarket);
   font-weight: 700;
-  font-size: clamp(18px, 1.8vw, 24px);
+  font-size: clamp(16px, 1.5vw, 20px);
   color: var(--before-950, #171a18);
 }
 
@@ -35,11 +42,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   border: 1px solid rgba(23, 26, 24, 0.25);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1;
   color: var(--after-800, #1f6546);
@@ -53,33 +60,35 @@
   color: var(--white);
 }
 
+/* ---------- 보도자료 ---------- */
+
 .news-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: clamp(20px, 3vw, 32px);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(12px, 1.6vw, 18px);
   align-items: stretch;
 }
 
 .news-feature {
   display: flex;
   flex-direction: column;
-  border-radius: 18px;
+  border-radius: 14px;
   overflow: hidden;
   background: var(--white, #fff);
-  box-shadow: 0 14px 32px rgba(23, 26, 24, 0.1);
+  box-shadow: 0 12px 28px rgba(23, 26, 24, 0.1);
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .news-feature:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(23, 26, 24, 0.16);
+  box-shadow: 0 18px 36px rgba(23, 26, 24, 0.16);
 }
 
 .news-feature-img {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   background-size: cover;
   background-position: center;
 }
@@ -87,19 +96,19 @@
 .news-feature-body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 20px 22px 24px;
+  gap: 8px;
+  padding: 14px 16px 18px;
 }
 
 .news-tag {
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 999px;
   background: var(--after-800, #1f6546);
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--white);
@@ -107,14 +116,14 @@
 
 .news-feature-img .news-tag {
   position: absolute;
-  left: 16px;
-  top: 16px;
+  left: 12px;
+  top: 12px;
 }
 
 .news-feature-title {
   font-family: var(--font-gmarket);
   font-weight: 700;
-  font-size: clamp(16px, 1.5vw, 20px);
+  font-size: clamp(13.5px, 1.15vw, 15px);
   line-height: 1.45;
   color: var(--before-950, #171a18);
   word-break: keep-all;
@@ -125,44 +134,44 @@
   align-items: center;
   gap: 5px;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--before-400, #8a806d);
 }
 
 .news-date-icon {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   flex: 0 0 auto;
 }
 
 .news-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
 }
 
 .news-list-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  padding: 16px;
-  border-radius: 16px;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
   background: var(--white, #fff);
-  box-shadow: 0 10px 24px rgba(23, 26, 24, 0.08);
+  box-shadow: 0 8px 20px rgba(23, 26, 24, 0.08);
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .news-list-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 32px rgba(23, 26, 24, 0.14);
+  box-shadow: 0 14px 28px rgba(23, 26, 24, 0.14);
 }
 
 .news-list-thumb {
   flex: 0 0 auto;
-  width: 84px;
-  height: 84px;
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
   background-size: cover;
   background-position: center;
 }
@@ -170,21 +179,108 @@
 .news-list-body {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   min-width: 0;
 }
 
 .news-list-title {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.45;
   color: var(--before-950, #171a18);
   word-break: keep-all;
 }
 
-@media (max-width: 720px) {
+/* ---------- 환경공단 매거진 ---------- */
+
+.mag-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(12px, 1.6vw, 18px);
+  height: 100%;
+}
+
+.mag-card {
+  position: relative;
+  display: block;
+  min-height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(23, 26, 24, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mag-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(23, 26, 24, 0.18);
+}
+
+.mag-card-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.mag-card-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(6, 8, 6, 0.72) 100%);
+  pointer-events: none;
+}
+
+.mag-card-badge {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--after-600, #4f8f62);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  text-align: center;
+}
+
+.mag-card-title {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  z-index: 1;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--white);
+  word-break: keep-all;
+}
+
+@media (max-width: 1024px) {
+  .news-mag-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(40px, 6vw, 64px);
+  }
+}
+
+@media (max-width: 560px) {
   .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mag-grid {
     grid-template-columns: 1fr;
   }
 }

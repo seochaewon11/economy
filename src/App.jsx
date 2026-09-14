@@ -31,9 +31,9 @@ export default function App() {
         <PromoBar />
         <EnvironmentalChange />
         <EnvironmentalFields />
+        <WasteToResourceSection />
         <PressReleaseSection />
         <EcoTvSection />
-        <WasteToResourceSection />
         <BranchMap />
         <BannerCollection />
       </main>

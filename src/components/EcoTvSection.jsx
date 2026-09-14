@@ -35,7 +35,7 @@ export default function EcoTvSection() {
     <section className="ecotv" id="eco-tv" aria-label="환경공단 영상">
       <div className="ecotv-inner">
         <div className="ecotv-headline">
-          <h2>환경공단 영상</h2>
+          <h2>K-eco TV</h2>
           <a className="ecotv-more" href="#" aria-label="영상 전체보기">
             +
           </a>
