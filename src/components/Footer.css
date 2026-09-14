@@ -26,8 +26,8 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
+  justify-content: center;
+  gap: 18px;
   padding: 18px 6vw;
   background: none;
   border: none;
